@@ -18,6 +18,7 @@
 	</bean>	
 	
 	<bean id="userRepo" class="restaurant_billing_system.persistance.UserRepository"></bean>
-	
-	
+	<bean id="orderRepo" class="restaurant_billing_system.persistance.OrderRepository"></bean>
+	<bean id="orderItemRepo" class="restaurant_billing_system.persistance.OrderItemRepository"></bean>
+	<bean id="menuItemTypeRepo" class="restaurant_billing_system.persistance.MenuItemTypeRepository"></bean>
 </beans>
