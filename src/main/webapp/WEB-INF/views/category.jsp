@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<h3>Category List</h3>
+	<div class="container">
+		
+	</div>
 </body>
 </html>

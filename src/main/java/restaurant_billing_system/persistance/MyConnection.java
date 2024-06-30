@@ -11,7 +11,7 @@ public class MyConnection {
 		 try {
 			 Class.forName("com.mysql.jdbc.Driver");
 			 
-			 String db="jdbc:mysql://localhost:3306/bookdb_m_m";
+			 String db="jdbc:mysql://localhost:3306/rbs";
 			 String username="root";
 			 String password="root";
 			 con=DriverManager.getConnection(db,username,password); 
