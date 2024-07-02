@@ -7,9 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h3>Welcome</h3>
-	
-	<a href="/restaurant_billing_system/categories">Category</a>|
-	<a href="/restaurant_billing_system/menus">Menu</a>
+
 </body>
 </html>
