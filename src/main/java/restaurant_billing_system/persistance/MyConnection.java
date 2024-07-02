@@ -15,6 +15,7 @@ public class MyConnection {
 			 String username="root";
 			 String password="root";
 			 con=DriverManager.getConnection(db,username,password); 
+			 System.out.println("Database connecting");
 			 } catch (ClassNotFoundException e) {
 			 System.out.println("Driver class not found");
 			 } catch (SQLException e) {
