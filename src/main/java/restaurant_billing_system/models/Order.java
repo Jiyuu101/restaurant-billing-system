@@ -7,6 +7,10 @@ public class Order {
 	private int table_id;
 	private int payment_id;
 	private double total_price;
+	private int order_item_id;
+	private String order_item_name;
+	private double order_item_total_price;
+	
 	
 	public int getId() {
 		return id;
@@ -45,5 +49,23 @@ public class Order {
 		this.total_price = total_price;
 	}
 	
+	public int getOrder_item_id() {
+		return order_item_id;
+	}
+	public void setOrder_item_id(int order_item_id) {
+		this.order_item_id = order_item_id;
+	}
+	public String getOrder_item_name() {
+		return order_item_name;
+	}
+	public void setOrder_item_name(String order_item_name) {
+		this.order_item_name = order_item_name;
+	}
+	public double getOrder_item_total_price() {
+		return order_item_total_price;
+	}
+	public void setOrder_item_total_price(double order_item_total_price) {
+		this.order_item_total_price = order_item_total_price;
+	}
 	
 }
