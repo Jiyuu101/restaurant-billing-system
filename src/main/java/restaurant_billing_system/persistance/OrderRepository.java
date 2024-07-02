@@ -106,7 +106,13 @@ public class OrderRepository {
 	
 	public Order getById(int id) {
 		Order order=null;
-		String sql="SELECT * FROM order WHERE id=?";
+
+	    String sql = "SELECT o.*, oi.name as order_item_name,oi.total_price as order_item_total_price,t.id as table_id " +
+                "FROM order o WHERE id=? " +
+                "INNER JOIN order_item oi ON o.order_item_id = oi.id " +
+                "INNER JOIN table t ON o.table_id = t.id";
+
+
 		try {
 			PreparedStatement ps=con.prepareStatement(sql);
 			ps.setInt(1, id);

@@ -23,8 +23,8 @@ public class OrderItemRepository {
 			int result;
 			try {
 				PreparedStatement ps=con.prepareStatement(sql);
-				ps.setInt(1, orderItem.getId());
-				ps.setInt(2, orderItem.getMenu_item_id());
+				ps.setInt(1, orderItem.getMenu_item_id());
+				ps.setString(2, orderItem.getMenu_item_name());
 				ps.setInt(3, orderItem.getOrder_id());
 				ps.setInt(4,orderItem.getQuantity());
 				ps.setDouble(5, orderItem.getPrice());
@@ -45,6 +45,7 @@ public class OrderItemRepository {
 			try {
 				PreparedStatement ps=con.prepareStatement(sql);
 				ps.setInt(1, orderItem.getMenu_item_id());
+				ps.setString(2, orderItem.getMenu_item_name());
 				ps.setInt(2, orderItem.getOrder_id());
 				ps.setInt(3,orderItem.getQuantity());
 				ps.setDouble(4, orderItem.getPrice());
@@ -79,7 +80,10 @@ public class OrderItemRepository {
 		
 		public List<OrderItem>getAll(){
 			List<OrderItem> orderItems=new ArrayList<>();
-			String sql="SELECT * FROM order_item";
+		    String sql = "SELECT oi.*, mi.name as menu_item_name,mi.price as menu_item_price,mit.type as menu_item_type_name " +
+	                 "FROM order_item oi " +
+	                 "INNER JOIN menu_item mi ON oi.menu_item_id = mi.id " +
+	                 "INNER JOIN menu_item_type mit ON mi.menu_item_type_id = mit.id";
 			try {
 				PreparedStatement ps=con.prepareStatement(sql);
 				
@@ -88,6 +92,8 @@ public class OrderItemRepository {
 					OrderItem orderItem=new OrderItem();
 					orderItem.setId(rs.getInt("id"));
 					orderItem.setMenu_item_id(rs.getInt("menu_item_id"));
+					orderItem.setMenu_item_name(rs.getString("menu_item_name"));
+					orderItem.setMenu_item_type_name(rs.getString("menu_item_type_name"));
 					orderItem.setOrder_id(rs.getInt("order_id"));
 					orderItem.setQuantity(rs.getInt("quantity"));
 					orderItem.setPrice(rs.getDouble("price"));

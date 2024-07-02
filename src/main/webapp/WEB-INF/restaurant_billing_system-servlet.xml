@@ -21,4 +21,5 @@
 	<bean id="orderRepo" class="restaurant_billing_system.persistance.OrderRepository"></bean>
 	<bean id="orderItemRepo" class="restaurant_billing_system.persistance.OrderItemRepository"></bean>
 	<bean id="menuItemTypeRepo" class="restaurant_billing_system.persistance.MenuItemTypeRepository"></bean>
+	<bean id="menuItemRepo" class="restaurant_billing_system.persistance.MenuItemRepository"></bean>
 </beans>
